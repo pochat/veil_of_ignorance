@@ -9,7 +9,7 @@ function Welcome() {
 
             <div className="home-title">
                 <h1>Rich or Poor.</h1>
-                <h1>One hidden life.</h1>
+                <h1>How Are We Born?</h1>
             </div>
 
             <p className="home-subtitle">
