@@ -136,24 +136,6 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: -2px;
-  color: rgb(230, 230, 230);
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: -2px;
-  color: rgb(230, 230, 230);
-}
-
 /* title block */
 .home-title {
   text-align: center;
@@ -206,4 +188,19 @@ h2 {
 
 .nav-link:hover {
   transform: scale(1.30);
+}
+
+.playerName {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: rgb(230, 230, 230);
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 3rem;
+  letter-spacing: -2px;
+  color: rgb(230, 230, 230);
+  margin-bottom: 60px;
+  text-align: center;
 }

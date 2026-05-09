@@ -5,6 +5,12 @@ import GameSettings from "./components/GameSettings"
 import GameStats from "./components/GameStats"
 import NavBar from "./components/NavBar"
 
+
+// ===================================================
+// ===================================================
+// HANDLE QUESTIONS UI AND LOGIC
+// ===================================================
+// ===================================================
 function QuestionsCard() {
 
     return(
@@ -12,23 +18,23 @@ function QuestionsCard() {
         <div className="container">
 
             {/* Player Name */}
-            <h1>{ localStorage.getItem("playerName")}, </h1>
+            <h1 className="playerName">{ localStorage.getItem("playerName")}, </h1>
 
                 {/* Question */}
                 <div className="cardTopContainer">
-                    <h2>{ questions[1].question }</h2>
+                    <h2 className="question">{ questions[0].question }</h2>
 
                     {/* Two cards with answers */}
                     <div className="cardMiddleContainer">
 
                         {/* Answer One */}
                         <div className="card">
-                            <p>{ questions[1].answers[0].text }</p>
+                            <p>{ questions[0].answers[0].text }</p>
                         </div>
 
                         {/* Answer Two */}
                         <div className="card">
-                            <p>{ questions[1].answers[1].text }</p>
+                            <p>{ questions[0].answers[1].text }</p>
                         </div>
                     </div>
             </div>
@@ -37,7 +43,11 @@ function QuestionsCard() {
     )
 }
 
-
+// ===================================================
+// ===================================================
+// WELCOME SCREEN WITH INTRODUCTION
+// ===================================================
+// ===================================================
 function Welcome() {
 
     function handleStart() {
