@@ -1,14 +1,14 @@
 const questions = [
   {
     id: 1,
-    question: "A new law is proposed. What matters most to you?",
+    question: "You’re about to enter the world. Should hospitals be public or private?",
     answers: [
       {
-        text: "How it affects equality and fairness",
+        text: "Public healthcare. Longer waits, but nobody is denied care.",
         type: "poor"
       },
       {
-        text: "How it affects economic growth",
+        text: "Private healthcare. Better treatment and faster service, for those who can pay.",
         type: "rich"
       }
     ]

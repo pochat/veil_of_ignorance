@@ -6,7 +6,7 @@ import MyApp from './Veil'
 function App() {
 
   return (
-    <Router>
+    <Router basename="/veil_of_ignorance">
       <MyApp />
     </Router>
   )
