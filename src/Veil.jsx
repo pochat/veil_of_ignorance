@@ -4,6 +4,7 @@ import questions from "./questions"
 import GameSettings from "./components/GameSettings"
 import GameStats from "./components/GameStats"
 import NavBar from "./components/NavBar"
+import { use, useState } from "react"
 
 
 // ===================================================
@@ -13,6 +14,10 @@ import NavBar from "./components/NavBar"
 // ===================================================
 function QuestionsCard() {
 
+    const [questionNumber, setQuestionNumber] = useState(0);
+    const [poorAnswerNumber, setPoorAnswerNumber] = useState(0);
+    const [richAnswerNumber, setRichAnswerNumber] = useState(1);
+
     function handleAnswer(answer) {
 
         if (answer.type === "poor") {
@@ -20,6 +25,15 @@ function QuestionsCard() {
         } else {
             alert("rich")
         }
+
+        // Invoke function for next question
+        nextQuestion()
+
+    }
+
+    function nextQuestion() {
+        setQuestionNumber(questionNumber + 1);
+
     }
 
     return(
@@ -31,20 +45,21 @@ function QuestionsCard() {
 
                 {/* Question */}
                 <div className="cardTopContainer">
-                    <h2 className="question">{ questions[0].question }</h2>
+                    <h2 className="question">{ questions[questionNumber].question }</h2>
 
                     {/* Two cards with answers */}
                     <div className="cardMiddleContainer">
 
-                        {/* Answer One */}
-                        <div className="card" onClick={() => handleAnswer(questions[0].answers[0])}>
-                            <p>{ questions[0].answers[0].text }</p>
+                        {/* Answer Poor */}
+                        <div className="card" onClick={() => handleAnswer(questions[questionNumber].answers[0])}>
+                            <p>{ questions[questionNumber].answers[poorAnswerNumber].text }</p>
                         </div>
 
-                        {/* Answer Two */}
-                        <div className="card" onClick={() => handleAnswer(questions[0].answers[1])}>
-                            <p>{ questions[0].answers[1].text }</p>
+                        {/* Answer Rich */}
+                        <div className="card" onClick={() => handleAnswer(questions[questionNumber].answers[1])}>
+                            <p>{ questions[questionNumber].answers[richAnswerNumber].text }</p>
                         </div>
+                    
                     </div>
             </div>
 
@@ -59,11 +74,19 @@ function QuestionsCard() {
 // ===================================================
 function Welcome() {
 
-    function handleStart() {
-        if (!localStorage.getItem("playerName")) {
-           let playerName = prompt("How should I call you?")
-           localStorage.setItem("playerName", playerName)
+    function handlePlayerName() {
+        let playerName = null
+
+        // Persist until a Player Name is entered
+        while (!playerName) {
+            playerName = prompt("How should I call you?")
+
+            if (playerName === null) {
+                alert("You must enter a name to play.")
+            }
         }
+
+        localStorage.setItem("playerName", playerName)
     }
 
     return(
@@ -80,7 +103,7 @@ function Welcome() {
             </p>
 
 
-            <Link className="animated-button-capsule" onClick={handleStart} to="/question">
+            <Link className="animated-button-capsule" onClick={ handlePlayerName } to="/question">
                 Start
             </Link>
 
