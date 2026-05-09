@@ -13,6 +13,15 @@ import NavBar from "./components/NavBar"
 // ===================================================
 function QuestionsCard() {
 
+    function handleAnswer(answer) {
+
+        if (answer.type === "poor") {
+            alert("poor")
+        } else {
+            alert("rich")
+        }
+    }
+
     return(
 
         <div className="container">
@@ -28,12 +37,12 @@ function QuestionsCard() {
                     <div className="cardMiddleContainer">
 
                         {/* Answer One */}
-                        <div className="card">
+                        <div className="card" onClick={() => handleAnswer(questions[0].answers[0])}>
                             <p>{ questions[0].answers[0].text }</p>
                         </div>
 
                         {/* Answer Two */}
-                        <div className="card">
+                        <div className="card" onClick={() => handleAnswer(questions[0].answers[1])}>
                             <p>{ questions[0].answers[1].text }</p>
                         </div>
                     </div>
