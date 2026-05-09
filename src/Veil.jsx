@@ -11,16 +11,26 @@ function QuestionsCard() {
 
         <div className="container">
 
-            <div className="cardTopContainer">
-                <h1>Question: { questions[1].question }</h1>
-                <div className="cardMiddleContainer">
-                    <div className="card">
-                        <p>{ questions[1].answers[0].text }</p>
+            {/* Player Name */}
+            <h1>{ localStorage.getItem("playerName")}, </h1>
+
+                {/* Question */}
+                <div className="cardTopContainer">
+                    <h2>{ questions[1].question }</h2>
+
+                    {/* Two cards with answers */}
+                    <div className="cardMiddleContainer">
+
+                        {/* Answer One */}
+                        <div className="card">
+                            <p>{ questions[1].answers[0].text }</p>
+                        </div>
+
+                        {/* Answer Two */}
+                        <div className="card">
+                            <p>{ questions[1].answers[1].text }</p>
+                        </div>
                     </div>
-                    <div className="card">
-                        <p>{ questions[1].answers[1].text }</p>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -29,6 +39,13 @@ function QuestionsCard() {
 
 
 function Welcome() {
+
+    function handleStart() {
+        if (!localStorage.getItem("playerName")) {
+           let playerName = prompt("How should I call you?")
+           localStorage.setItem("playerName", playerName)
+        }
+    }
 
     return(
 
@@ -43,7 +60,8 @@ function Welcome() {
                 You’ll decide how society works, but society, will decide who you are.            
             </p>
 
-            <Link className="animated-button-capsule" to="/question">
+
+            <Link className="animated-button-capsule" onClick={handleStart} to="/question">
                 Start
             </Link>
 
