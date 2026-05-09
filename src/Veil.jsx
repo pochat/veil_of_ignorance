@@ -75,10 +75,10 @@ function QuestionsCard() {
 function Welcome() {
 
     function handlePlayerName() {
-        let playerName = null
+        let playerName = localStorage.getItem("playerName")
 
         // Persist until a Player Name is entered
-        while (!playerName) {
+        while (!playerName || playerName === '') {
             playerName = prompt("How should I call you?")
 
             if (playerName === null) {
