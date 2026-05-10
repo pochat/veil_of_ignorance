@@ -1,0 +1,47 @@
+import { Link } from "react-router-dom"
+
+// ===================================================
+// ===================================================
+// WELCOME SCREEN WITH INTRODUCTION
+// ===================================================
+// ===================================================
+function Welcome() {
+
+    function handlePlayerName() {
+        let playerName = localStorage.getItem("playerName")
+
+        // Persist until a Player Name is entered
+        while (!playerName || playerName === '' || playerName === 'Unknown') {
+            playerName = prompt("How should I call you?")
+
+            if (playerName === null) {
+                alert("You must enter a name to play.")
+            }
+        }
+
+        localStorage.setItem("playerName", playerName)
+    }
+
+    return(
+
+        <div className="container">
+
+            <div className="home-title">
+                <h1>Rich or Poor.</h1>
+                <h2 className="home-subtitle">Where in society will you be born?</h2>
+            </div>
+
+            <p className="home-subtitle">
+                You’ll decide how society works, but society, will decide who you are.            
+            </p>
+
+
+            <Link className="animated-button-capsule" onClick={ handlePlayerName } to="/question">
+                Start
+            </Link>
+
+        </div>
+    )
+}
+
+export default Welcome;
