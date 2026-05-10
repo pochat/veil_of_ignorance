@@ -103,12 +103,14 @@ function LifeCard() {
 
                 {/* Results fade in */}
                 <h1 className={`lifeCard-subtitle fade-in-result ${assignedLife ? "visible" : ""}`}>
-                {assignedLife}
+                Your Fate: {assignedLife}
                 </h1>
 
                 { !assignedLife !== null && (
                 <>
+                {/* Terniary, if true do this, or else */}
                 <div className={`fade-in-result ${assignedLife ? "visible" : ""}`}>
+                    <p className="lifeCard-subtitle">You chose: {chosenQuestion}</p>
                     <p className="lifeCard-subtitle">{ outcome }</p>
                     <button className="animated-button-capsule">Cancel my life</button>
                     <button 
