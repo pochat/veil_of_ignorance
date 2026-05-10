@@ -25,7 +25,8 @@ function LifeCard() {
                 <h1>Your Choice</h1>
                 <p className="lifeCard-subtitle">{ chosenQuestion }</p>
                 
-                {/* Hide button after is clicked */}
+                {/* Render only if life status is on */}
+                {/* React documentation: https://legacy.reactjs.org/docs/conditional-rendering.html */}
                 { life === null && (
                     <>
                         <h2>Will you be born as rich or poor? </h2>
