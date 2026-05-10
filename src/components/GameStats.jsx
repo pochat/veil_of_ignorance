@@ -1,4 +1,5 @@
 import { useState } from "react"
+import resetLocalStorage from "../resetLocalStorage"
 
 function GameStats() {
 
@@ -8,14 +9,8 @@ function GameStats() {
 
     function resetGameStats() {
 
-        // Remove the data name from the storage
-        localStorage.removeItem("currentQuestion");
-        localStorage.removeItem("currentPlayerChoice");
-        localStorage.removeItem("questionIndex");
-
-        // Reset the player name and assign: Not born yet
-        setPlayerName(localStorage.setItem("playerName", 'Not born yet'))
-        setPlayerName("Not born yet")
+        // Use Module with central reset settings
+        resetLocalStorage()
     }
 
     return(

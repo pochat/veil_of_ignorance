@@ -7,7 +7,6 @@ function NavBar() {
             <Link className="nav-link" to="/">Home</Link>
             <div>
                 <Link className="nav-link" to="/gamestats">Stats</Link>
-                <Link className="nav-link" to="/settings">Settings</Link>
             </div>
         </div>
     )

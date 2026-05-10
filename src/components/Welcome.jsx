@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import resetLocalStorage from "../resetLocalStorage"
 
 // ===================================================
 // ===================================================
@@ -19,7 +20,10 @@ function Welcome() {
             }
         }
 
-        localStorage.removeItem("currentPlayerChoice")
+        // Use Module with central reset settings
+        resetLocalStorage()
+
+        // Set the player name
         localStorage.setItem("playerName", playerName)
     }
 
