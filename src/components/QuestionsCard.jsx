@@ -15,16 +15,20 @@ function QuestionsCard() {
 
     function handleAnswer(answer) {
 
+        // Detect user answers and save them to local storage
         if (answer.type === "poor") {
-            alert("poor")
-        } else {
-            alert("rich")
+            localStorage.setItem("currentQuestion", questions[questionNumber].answers[0].text)
+            localStorage.setItem("currentAnswer", 'poor')
+        } else {            
+            localStorage.setItem("currentQuestion", questions[questionNumber].answers[1].text)
+            localStorage.setItem("currentAnswer", 'rich')
         }
 
         // Invoke function for next question
         nextQuestion()
 
     }
+
 
     function nextQuestion() {
         setQuestionNumber(questionNumber + 1);

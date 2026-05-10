@@ -4,13 +4,16 @@ function GameStats() {
 
     // setStates
     const [playerName, setPlayerName] = useState(localStorage.getItem('playerName'))
+    const [currentAnswer, setCurrentAnwer] = useState(localStorage.getItem('currentAnswer'))
 
     function resetGameStats() {
 
         // Remove the player name from the storage
-        setPlayerName(localStorage.setItem("playerName", 'Unknown'))
+        setPlayerName(localStorage.setItem("playerName", 'Not born yet'))
+        setPlayerName("Not born yet")
 
-        setPlayerName("Unknown")
+        setCurrentAnwer(localStorage.clear())
+
 
     }
 

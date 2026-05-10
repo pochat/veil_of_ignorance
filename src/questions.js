@@ -3,28 +3,46 @@ const questions = [
     id: 1,
     question: "You’re about to enter the world. Should hospitals be public or private?",
     answers: [
+
       {
-        text: "Public healthcare. Longer waits, but nobody is denied care.",
-        type: "poor"
+        text: "Public healthcare. Accessible to anyone but unbelievable waiting lines",
+        type: "poor",
+        outcomes: {
+          poor: "The public system saved you! You received care despite having no money.",
+          rich: "You had to wait in long lines despite your wealth. Frustrating!"
+        }
       },
+
       {
-        text: "Private healthcare. Better treatment and faster service, for those who can pay.",
-        type: "rich"
+        text: "Private healthcare. Fast Service, Better Doctors, but at a cost",
+        type: "rich",
+        outcomes: {
+          poor: "You couldn't afford the fees. You were turned away at the door.",
+          rich: "Your wealth bought you the best surgeons. You recovered instantly!"
+        }
       }
     ]
   },
 
-  {
+{
     id: 2,
-    question: "What should schools prioritize?",
+    question: "You're a school-age child. Should education be private or public?",
     answers: [
       {
-        text: "Leadership and entrepreneurship",
-        type: "rich"
+        text: "Public Education.",
+        type: "poor",
+        outcomes: {
+          poor: "The public education system welcomed you",
+          rich: "You never had access to the best teachers"
+        }
       },
       {
-        text: "Equal access for all students",
-        type: "poor"
+        text: "Private Education.",
+        type: "rich",
+        outcomes: {
+          poor: "You couldn't afford the fees. You were turned away at the door.",
+          rich: "Your wealth bought you the best teachers."
+        }
       }
     ]
   }

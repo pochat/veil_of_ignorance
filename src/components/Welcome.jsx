@@ -11,7 +11,7 @@ function Welcome() {
         let playerName = localStorage.getItem("playerName")
 
         // Persist until a Player Name is entered
-        while (!playerName || playerName === '' || playerName === 'Unknown') {
+        while (!playerName || playerName === '' || playerName === 'Not born yet') {
             playerName = prompt("How should I call you?")
 
             if (playerName === null) {
@@ -32,7 +32,7 @@ function Welcome() {
             </div>
 
             <p className="home-subtitle">
-                You’ll decide how society works, but society, will decide who you are.            
+                You decide how society works, but it will haunt you.            
             </p>
 
 

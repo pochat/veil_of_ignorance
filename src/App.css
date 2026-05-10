@@ -8,48 +8,36 @@
 .animated-button-capsule {
   position: relative;
   overflow: hidden;
-
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 999px;
-
   padding: 14px 42px;
-
+  margin: 40px;
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(10px);
-
   color: white;
   font-size: 1rem;
   letter-spacing: 0.5px;
-
+  text-decoration: none;
   cursor: pointer;
-
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
     background 0.25s ease;
 }
 
-/* subtle hover */
 .animated-button-capsule:hover {
   transform: translateY(-2px);
-
   border-color: rgba(255,255,255,0.18);
-
   background: rgba(255,255,255,0.07);
 }
 
-/* subtle rotating sheen */
 .animated-button-capsule::before {
   content: "";
-
   position: absolute;
-
   width: 250%;
   height: 250%;
-
   top: -75%;
   left: -75%;
-
   background: conic-gradient(
     transparent,
     rgba(255,255,255,0.03),
@@ -57,7 +45,6 @@
     rgba(255,255,255,0.03),
     transparent
   );
-
   animation: rotate 10s linear infinite;
 }
 
@@ -153,16 +140,18 @@ body {
   font-weight: 400;
   letter-spacing: -2px;
   color: rgb(230, 230, 230);
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
-/* subtitle */
 .home-subtitle {
   font-size: 1.4rem;
   max-width: 700px;
   text-align: center;
   color: rgba(148, 202, 255, 0.55);
-  margin-bottom: 40px;
+}
+
+.home-subtitle, p {
+  margin-top: 20px;
 }
 
 /* NavBar is fixed at the top */
