@@ -64,14 +64,20 @@ function LifeCard() {
 
     function nextQuestion() {
 
+
         // Retrieve current question index
-        index = localStorage.getItem("questionIndex")
+        index = Number(localStorage.getItem("questionIndex"))
 
-        // Overwrite current question index + 1
-        localStorage.setItem("questionIndex", index + 1)
+        if (index + 1 < questions.length) {
 
-        // Go to next question
-        navigate("/question");
+            // Overwrite current question index + 1
+            localStorage.setItem("questionIndex", Number(index + 1))
+            
+            // Go to next question
+            navigate("/question");
+        } else {
+            alert("Game over")
+        }
 
     }
 
