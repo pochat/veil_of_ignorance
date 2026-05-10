@@ -1,7 +1,8 @@
 const questions = [
   {
     id: 1,
-    question: "You’re about to enter the world. Should hospitals be public or private?",
+    question: "You’re about to enter the world. Should the hospital you'll be born at, be public or private?",
+    questionBeforeLifeChoice: "Will you be born rich or poor?",
     answers: [
 
       {
@@ -27,6 +28,7 @@ const questions = [
 {
     id: 2,
     question: "You're a school-age child. Should education be private or public?",
+    questionBeforeLifeChoice: "Will you study at private or public school?",
     answers: [
       {
         text: "Public Education.",
