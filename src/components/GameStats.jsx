@@ -11,14 +11,11 @@ function GameStats() {
         // Remove the data name from the storage
         localStorage.removeItem("currentQuestion");
         localStorage.removeItem("currentPlayerChoice");
-        localStorage.removeItem("currentQuestionIndex");
+        localStorage.removeItem("questionIndex");
 
         // Reset the player name and assign: Not born yet
         setPlayerName(localStorage.setItem("playerName", 'Not born yet'))
         setPlayerName("Not born yet")
-
-        setCurrentAnwer(localStorage.clear())
-
     }
 
     return(

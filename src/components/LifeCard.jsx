@@ -1,23 +1,26 @@
+import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import questions from "../questions"
-
 
 function LifeCard() {
 
     // Set States for reactive content
-    const [questionNumber, setQuestionNumber] = useState(0);
     const [chosenQuestion, setChosenQuestion] = useState(localStorage.getItem('currentQuestion'))
     const [currentPlayerChoice, setCurrentPlayerChoice] = useState(localStorage.getItem('currentPlayerChoice'))
     const [assignedLife, setAssignedLife] = useState(null)
     const [outcome, setOutcome] = useState("");
 
-    const index = localStorage.getItem('currentQuestionIndex') || 0;
+    // Get question index from storage
+    // Convert to Number (not a string)
+    let index = Number(localStorage.getItem('questionIndex') || 0);
     const questionBeforeLife = questions[index].questionBeforeLifeChoice;
     
-    console.log("Question number from life card: ", questionNumber);
-    
-    console.log("Life value at the top of the code: ", assignedLife);
+    // DEBUG
+    // console.log("Life value at the top of the code: ", assignedLife);
 
+    // Activate url navigation
+    // Official doc: https://reactrouter.com/api/hooks/useNavigate
+    const navigate = useNavigate()
 
     // Logic to assign a life (rich/poor) to the Player
     function getRandomLife() {
@@ -59,6 +62,19 @@ function LifeCard() {
 
     }
 
+    function nextQuestion() {
+
+        // Retrieve current question index
+        index = localStorage.getItem("questionIndex")
+
+        // Overwrite current question index + 1
+        localStorage.setItem("questionIndex", index + 1)
+
+        // Go to next question
+        navigate("/question");
+
+    }
+
 
     return(
 
@@ -89,7 +105,11 @@ function LifeCard() {
                 <div className={`fade-in-result ${assignedLife ? "visible" : ""}`}>
                     <p className="lifeCard-subtitle">{ outcome }</p>
                     <button className="animated-button-capsule">Cancel my life</button>
-                    <button className="animated-button-capsule">Carry on with my life</button>
+                    <button 
+                    onClick={ nextQuestion }
+                    className="animated-button-capsule"
+                    >Carry on with my life
+                    </button>
                 </div>
                 </>
                 )}
