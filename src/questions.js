@@ -10,7 +10,7 @@ const questions = [
         type: "poor",
         outcomes: {
           poor: "The public system saved you! You received care despite having no money.",
-          rich: "You had to wait in long lines despite your wealth. Frustrating!"
+          rich: "Even though you are wealthy, you had to wait."
         }
       },
 
@@ -34,7 +34,7 @@ const questions = [
         text: "Public Education.",
         type: "poor",
         outcomes: {
-          poor: "The public education system welcomed you",
+          poor: "The public education system welcomed you.",
           rich: "You never had access to the best teachers"
         }
       },
@@ -42,7 +42,7 @@ const questions = [
         text: "Private Education.",
         type: "rich",
         outcomes: {
-          poor: "You couldn't afford the fees. You were turned away at the door.",
+          poor: "You couldn't afford the tuition fees and turned away at the door.",
           rich: "Your wealth bought you the best teachers."
         }
       }

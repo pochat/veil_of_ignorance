@@ -8,28 +8,57 @@ function LifeCard() {
     const [questionNumber, setQuestionNumber] = useState(0);
     const [chosenQuestion, setChosenQuestion] = useState(localStorage.getItem('currentQuestion'))
     const [currentPlayerChoice, setCurrentPlayerChoice] = useState(localStorage.getItem('currentPlayerChoice'))
-    const [life, setLife] = useState(null)
+    const [assignedLife, setAssignedLife] = useState(null)
+    const [outcome, setOutcome] = useState("");
 
     const index = localStorage.getItem('currentQuestionIndex') || 0;
     const questionBeforeLife = questions[index].questionBeforeLifeChoice;
-
-    // Receive the current life status
-    let lifeStatus = ''
-
-    // Produce the outcome
-    let outcome = ''
     
-    function getRandomLife() {
-        const lifeOptions = ['Poor', 'Rich']
-        lifeStatus = lifeOptions[Math.floor(Math.random() * lifeOptions.length)];
-        setLife(lifeStatus)
+    console.log("Question number from life card: ", questionNumber);
+    
+    console.log("Life value at the top of the code: ", assignedLife);
 
-        if ( setLife === currentPlayerChoice ) {
-            outcome = questions[index].answers[0].outcomes.poor
+
+    // Logic to assign a life (rich/poor) to the Player
+    function getRandomLife() {
+
+        // Define life options in array
+        const lifeOptions = ['poor', 'rich']
+
+        // Randomize the options
+        const assignedRandomLife = lifeOptions[Math.floor(Math.random() * lifeOptions.length)];
+
+        // Update the state
+        setAssignedLife(assignedRandomLife)
+        // console.log("This is the updated current value:", assignedRandomLife);
+        
+        // Initialize outcome to capture from questions.js
+        let assignedLifeOutcome = ''
+        
+        // Compare current life to playersChoice
+        if (currentPlayerChoice === 'poor') {
+            
+            // They are POOR (answers[0])
+            if (assignedRandomLife === 'poor') {
+                assignedLifeOutcome = questions[index].answers[0].outcomes.poor;
+            } else {
+                assignedLifeOutcome = questions[index].answers[0].outcomes.rich;
+            }
+
         } else {
-            outcome = questions[index].answers[1].outcomes.rich
+            
+            // They are RICH (answers[1])
+            if (assignedRandomLife === 'poor') {
+                assignedLifeOutcome = questions[index].answers[1].outcomes.poor;
+            } else {
+                assignedLifeOutcome = questions[index].answers[1].outcomes.rich;
+            }
         }
+
+        setOutcome(assignedLifeOutcome)
+
     }
+
 
     return(
 
@@ -38,7 +67,7 @@ function LifeCard() {
             <div className="lifeCard-title">
                 {/* Render only if life status is on */}
                 {/* React documentation: https://legacy.reactjs.org/docs/conditional-rendering.html */}
-                { life === null && (
+                { assignedLife === null && (
                     <>
                         <h2> { questionBeforeLife } </h2>
                         <button 
@@ -50,18 +79,15 @@ function LifeCard() {
                     </>
                   )}
 
-                {/* <h1>You Chose:</h1>
-                <p className="lifeCard-subtitle">{ chosenQuestion }</p> */}
-
                 {/* Results fade in */}
-                <h1 className={`lifeCard-subtitle fade-in-result ${life ? "visible" : ""}`}>
-                {life}
+                <h1 className={`lifeCard-subtitle fade-in-result ${assignedLife ? "visible" : ""}`}>
+                {assignedLife}
                 </h1>
 
-                { !life !== null && (
+                { !assignedLife !== null && (
                 <>
-                <div className={`fade-in-result ${life ? "visible" : ""}`}>
-                    <p className="lifeCard-subtitle"> { outcome }</p>
+                <div className={`fade-in-result ${assignedLife ? "visible" : ""}`}>
+                    <p className="lifeCard-subtitle">{ outcome }</p>
                     <button className="animated-button-capsule">Cancel my life</button>
                     <button className="animated-button-capsule">Carry on with my life</button>
                 </div>

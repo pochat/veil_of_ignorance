@@ -20,6 +20,9 @@ function QuestionsCard() {
     const [poorAnswerNumber, setPoorAnswerNumber] = useState(0);
     const [richAnswerNumber, setRichAnswerNumber] = useState(1);
 
+    console.log("Question number from QuestionsCard: ", questionNumber);
+    
+
     function handleAnswer(answer) {
 
         // Detect user answers and save them to local storage

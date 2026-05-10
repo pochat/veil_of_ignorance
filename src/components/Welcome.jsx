@@ -19,6 +19,7 @@ function Welcome() {
             }
         }
 
+        localStorage.removeItem("currentPlayerChoice")
         localStorage.setItem("playerName", playerName)
     }
 
