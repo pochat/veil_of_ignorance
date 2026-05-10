@@ -1,5 +1,8 @@
+import { Routes, Route, Link } from "react-router-dom"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import questions from "../questions"
+import LifeCard from "./LifeCard";
 
 
 // ===================================================
@@ -8,6 +11,10 @@ import questions from "../questions"
 // ===================================================
 // ===================================================
 function QuestionsCard() {
+
+    // Activate url navigation
+    // Official doc: https://reactrouter.com/api/hooks/useNavigate
+    const navigate = useNavigate()
 
     const [questionNumber, setQuestionNumber] = useState(0);
     const [poorAnswerNumber, setPoorAnswerNumber] = useState(0);
@@ -24,8 +31,12 @@ function QuestionsCard() {
             localStorage.setItem("currentAnswer", 'rich')
         }
 
+
+
+        navigate("/lifecard");
+
         // Invoke function for next question
-        nextQuestion()
+        // nextQuestion()
 
     }
 

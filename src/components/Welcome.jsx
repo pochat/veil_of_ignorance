@@ -28,11 +28,11 @@ function Welcome() {
 
             <div className="home-title">
                 <h1>Rich or Poor.</h1>
-                <h2 className="home-subtitle">Where in society will you be born?</h2>
+                <h2 className="home-subtitle">How will you enter the world?</h2>
             </div>
 
             <p className="home-subtitle">
-                You decide how society works, but it will haunt you.            
+                You set the rules for the wealthy and the struggling. But you won't know who you are until your choices are made.           
             </p>
 
 

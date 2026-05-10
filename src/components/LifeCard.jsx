@@ -23,6 +23,7 @@ function LifeCard() {
                 <h1>Life Card</h1>
                 <h2 className="home-subtitle">Your choice:</h2>
                 <p className="home-subtitle">{ chosenQuestion }</p>
+                <h3>Will you be born as rich or poor? </h3>
                 <button 
                 className="animated-button-capsule"
                 onClick={ getRandomLife }
