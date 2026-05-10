@@ -6,6 +6,15 @@ function LifeCard() {
     // Set States for reactive content
     const [chosenQuestion, setChosenQuestion] = useState(localStorage.getItem('currentQuestion'))
     const [currentAnswer, setCurrentAnwer] = useState(localStorage.getItem('currentAnswer'))
+    const [life, setLife] = useState(null)
+
+    let lifeStatus = ''
+
+    function getRandomLife() {
+        const lifeOptions = ['Poor', 'Rich']
+        lifeStatus = lifeOptions[Math.floor(Math.random() * lifeOptions.length)];
+        setLife(lifeStatus)
+    }
 
     return(
 
@@ -14,6 +23,15 @@ function LifeCard() {
                 <h1>Life Card</h1>
                 <h2 className="home-subtitle">Your choice:</h2>
                 <p className="home-subtitle">{ chosenQuestion }</p>
+                <button 
+                className="animated-button-capsule"
+                onClick={ getRandomLife }
+                >
+                    Roll the dice
+                </button>
+
+                <p>Life status: { life }</p>
+
             </div>
         </div>
     )

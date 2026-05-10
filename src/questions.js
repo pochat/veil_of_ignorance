@@ -5,7 +5,7 @@ const questions = [
     answers: [
 
       {
-        text: "Public healthcare. Accessible to anyone but unbelievable waiting lines",
+        text: "Public healthcare. Accessible to anyone but unbelievable waiting lines.",
         type: "poor",
         outcomes: {
           poor: "The public system saved you! You received care despite having no money.",
@@ -14,7 +14,7 @@ const questions = [
       },
 
       {
-        text: "Private healthcare. Fast Service, Better Doctors, but at a cost",
+        text: "Private healthcare. Fast Service, Better Doctors, but at a cost.",
         type: "rich",
         outcomes: {
           poor: "You couldn't afford the fees. You were turned away at the door.",
