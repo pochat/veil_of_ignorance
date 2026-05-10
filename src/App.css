@@ -123,6 +123,16 @@ body {
   box-sizing: border-box;
 }
 
+/* Fade animation for life status */
+.fade-in-result {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.fade-in-result.visible {
+  opacity: 1;
+}
+
 /* title block */
 .home-title {
   text-align: center;
@@ -151,6 +161,39 @@ body {
 }
 
 .home-subtitle, p {
+  margin-top: 20px;
+}
+
+/* Life card title block */
+.lifeCard-title {
+  text-align: center;
+}
+
+.lifeCard-title h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: rgb(230, 230, 230);
+}
+
+.lifeCard-title h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-top: 20px;
+  letter-spacing: -2px;
+  color: rgb(230, 230, 230);
+
+}
+
+.lifeCard-subtitle {
+  font-size: 1.4rem;
+  max-width: 700px;
+  text-align: center;
+  color: rgba(148, 202, 255, 0.55);
+  margin: 20px auto 0 auto;
+}
+
+.lifeCard-subtitle, p {
   margin-top: 20px;
 }
 
@@ -193,4 +236,45 @@ body {
   color: rgb(230, 230, 230);
   margin-bottom: 60px;
   text-align: center;
+}
+
+/* While rolling: Make the text pulse and blur slightly */
+.rolling-text {
+  animation: pulseBlur 0.3s infinite alternate;
+  color: rgba(148, 202, 255, 0.8);
+}
+
+@keyframes pulseBlur {
+  from {
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  to {
+    transform: scale(1.05);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+}
+
+/* When revealed: A "Pop" animation */
+.reveal-text {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: bold;
+  font-size: 2rem; /* Make the result bigger */
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Color coding the result */
+.rich {
+  color: #ffd700; /* Gold */
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.poor {
+  color: #a0a0a0; /* Grey/Silver */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }

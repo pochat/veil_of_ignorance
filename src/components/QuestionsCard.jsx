@@ -32,7 +32,6 @@ function QuestionsCard() {
         }
 
 
-
         navigate("/lifecard");
 
         // Invoke function for next question
