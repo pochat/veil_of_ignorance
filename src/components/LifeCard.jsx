@@ -7,18 +7,28 @@ function LifeCard() {
     // Set States for reactive content
     const [questionNumber, setQuestionNumber] = useState(0);
     const [chosenQuestion, setChosenQuestion] = useState(localStorage.getItem('currentQuestion'))
-    const [currentAnswer, setCurrentAnwer] = useState(localStorage.getItem('currentAnswer'))
+    const [currentPlayerChoice, setCurrentPlayerChoice] = useState(localStorage.getItem('currentPlayerChoice'))
     const [life, setLife] = useState(null)
 
     const index = localStorage.getItem('currentQuestionIndex') || 0;
     const questionBeforeLife = questions[index].questionBeforeLifeChoice;
-    
+
+    // Receive the current life status
     let lifeStatus = ''
 
+    // Produce the outcome
+    let outcome = ''
+    
     function getRandomLife() {
         const lifeOptions = ['Poor', 'Rich']
         lifeStatus = lifeOptions[Math.floor(Math.random() * lifeOptions.length)];
         setLife(lifeStatus)
+
+        if ( setLife === currentPlayerChoice ) {
+            outcome = questions[index].answers[0].outcomes.poor
+        } else {
+            outcome = questions[index].answers[1].outcomes.rich
+        }
     }
 
     return(
@@ -51,6 +61,7 @@ function LifeCard() {
                 { !life !== null && (
                 <>
                 <div className={`fade-in-result ${life ? "visible" : ""}`}>
+                    <p className="lifeCard-subtitle"> { outcome }</p>
                     <button className="animated-button-capsule">Cancel my life</button>
                     <button className="animated-button-capsule">Carry on with my life</button>
                 </div>

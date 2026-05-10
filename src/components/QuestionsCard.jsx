@@ -25,10 +25,10 @@ function QuestionsCard() {
         // Detect user answers and save them to local storage
         if (answer.type === "poor") {
             localStorage.setItem("currentQuestion", questions[questionNumber].answers[0].text)
-            localStorage.setItem("currentAnswer", 'poor')
+            localStorage.setItem("currentPlayerChoice", 'poor')
         } else {            
             localStorage.setItem("currentQuestion", questions[questionNumber].answers[1].text)
-            localStorage.setItem("currentAnswer", 'rich')
+            localStorage.setItem("currentPlayerChoice", 'rich')
         }
 
 
