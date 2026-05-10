@@ -6,7 +6,7 @@ const questions = [
     answers: [
 
       {
-        text: "Public hospitals",
+        text: "Public hospitals. (Free but long waitlines).",
         type: "poor",
         outcomes: {
           poor: "The public system saved you! You received care despite having no money.",
@@ -15,7 +15,7 @@ const questions = [
       },
 
       {
-        text: "Private hospitals",
+        text: "Private hospitals (Paid but faster).",
         type: "rich",
         outcomes: {
           poor: "You couldn't afford the fees. You were turned away at the door.",
@@ -31,7 +31,7 @@ const questions = [
     questionBeforeLifeChoice: "Will you study at private or public school?",
     answers: [
       {
-        text: "Public Education.",
+        text: "Public Education. (Free but less quality)",
         type: "poor",
         outcomes: {
           poor: "The public education system welcomed you.",
@@ -39,7 +39,7 @@ const questions = [
         }
       },
       {
-        text: "Private Education.",
+        text: "Private Education. (Paid but best education)",
         type: "rich",
         outcomes: {
           poor: "You couldn't afford the tuition fees and turned away at the door.",
@@ -58,15 +58,15 @@ const questions = [
         text: "Same Salary for Everyone.",
         type: "poor",
         outcomes: {
-          poor: "You were paid the same as everyone else.",
+          poor: "You were paid the same as everyone else?",
           rich: "Despite your knowledge, you were paid the same as your peers."
         }
       },
       {
-        text: "Salary must be based on skills.",
+        text: "Salary based on people skills.",
         type: "rich",
         outcomes: {
-          poor: "You need to study harder.",
+          poor: "Despite your knowledge, you were paid the same as your peers.",
           rich: "You are paid more because you know more."
         }
       }

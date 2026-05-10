@@ -91,6 +91,7 @@ function LifeCard() {
                 {/* React documentation: https://legacy.reactjs.org/docs/conditional-rendering.html */}
                 { assignedLife === null && (
                     <>
+                        <p className="lifeCard-subtitle">Get ready for your fate: {assignedLife}</p>
                         <h2> { questionBeforeLife } </h2>
                         <button 
                             className="animated-button-capsule"
