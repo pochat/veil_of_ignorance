@@ -11,6 +11,7 @@ function GameStats() {
 
         // Use Module with central reset settings
         resetLocalStorage()
+        setPlayerName(localStorage.getItem('playerName'))
     }
 
     return(
