@@ -46,24 +46,28 @@ function LifeCard() {
         // Compare current life to playersChoice
         if (currentPlayerChoice === 'poor') {
 
-            // Save fate stats to local storage
-            localStorage.setItem("fatePoor", currentFatePoor + 1 )
-            
             // They are POOR (answers[0])
             if (assignedRandomLife === 'poor') {
                 assignedLifeOutcome = questions[index].answers[0].outcomes.poor;
+
+                // Save fate stats to local storage
+                localStorage.setItem("currentFatePoor", currentFatePoor + 1 )
+                
             } else {
                 assignedLifeOutcome = questions[index].answers[0].outcomes.rich;
+
+                // Save fate stats to local storage
+                localStorage.setItem("currentFateRich", currentFateRich + 1 )
+                
             }
             
         } else {
             
-            // Save fate stats to local storage
-            localStorage.setItem("fateRich", currentFateRich + 1 )
-
+            
             // They are RICH (answers[1])
             if (assignedRandomLife === 'rich') {
                 assignedLifeOutcome = questions[index].answers[1].outcomes.poor;
+
             } else {
                 assignedLifeOutcome = questions[index].answers[1].outcomes.rich;
             }
