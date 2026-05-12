@@ -50,7 +50,7 @@ const questions = [
   {
     id: 3,
     question: "You are now 25 and looking for jobs. How should salaries work?",
-    questionBeforeLifeChoice: "Will you be highly skilled or average?",
+    questionBeforeLifeChoice: "Will you be poorly or highly skilled?",
     answers: [
       {
         text: "Everyone earns the same salary.",
