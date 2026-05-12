@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import resetLocalStorage from "../resetLocalStorage"
+import resetLocalStorage from "../modules/resetLocalStorage"
 
 // ===================================================
 // ===================================================

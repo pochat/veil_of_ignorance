@@ -1,6 +1,6 @@
 import { Routes, Route, Link, useNavigate, parsePath } from "react-router-dom"
 import { useState } from "react";
-import questions from "../questions"
+import questions from "../modules/questions"
 import LifeCard from "./LifeCard";
 
 

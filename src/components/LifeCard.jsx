@@ -1,6 +1,6 @@
 import { Routes, Route, Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
-import questions from "../questions"
+import questions from "../modules/questions"
 
 function LifeCard() {
 
@@ -91,7 +91,7 @@ function LifeCard() {
             // Go to next question
             navigate("/question");
         } else {
-            alert("Game over")
+            navigate("/finalscreen")
         }
 
     }

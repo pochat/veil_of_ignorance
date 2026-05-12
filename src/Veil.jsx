@@ -4,6 +4,7 @@ import QuestionsCard from "./components/QuestionsCard"
 import GameStats from "./components/GameStats"
 import NavBar from "./components/NavBar"
 import LifeCard from "./components/LifeCard"
+import FinalScreen from "./components/FinalScreen"
 import { use, useState } from "react"
 
 
@@ -23,6 +24,7 @@ function MyApp() {
                 <Route path="/gamestats" element={ <GameStats /> } />
                 <Route path="/question" element={ <QuestionsCard /> } />
                 <Route path="/lifecard" element={ <LifeCard /> } />
+                <Route path="/finalscreen" element={ <FinalScreen /> } />
             </Routes>
         </div>
     )

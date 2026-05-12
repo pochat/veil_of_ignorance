@@ -1,5 +1,5 @@
 import { useState } from "react"
-import resetLocalStorage from "../resetLocalStorage"
+import resetLocalStorage from "../modules/resetLocalStorage"
 
 function GameStats() {
 
