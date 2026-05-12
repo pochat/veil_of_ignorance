@@ -58,6 +58,10 @@ function QuestionsCard() {
     return(
 
         <div className="container">
+            
+            <div className="horizontalLine" >
+            <p>Questions: {questionNumber} / {questions.length}</p>
+            </div>
 
             {/* Player Name */}
             <h1 className="playerName">{ localStorage.getItem("playerName")}, </h1>

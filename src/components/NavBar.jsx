@@ -6,7 +6,7 @@ function NavBar() {
         <div className="navigation-container">
             <Link className="nav-link" to="/">Home</Link>
             <div>
-                <Link className="nav-link" to="/gamestats">Stats</Link>
+                <Link className="nav-link" to="/finalScreen">My Life</Link>
             </div>
         </div>
     )

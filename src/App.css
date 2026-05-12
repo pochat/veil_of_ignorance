@@ -164,6 +164,15 @@ body {
   margin-top: 20px;
 }
 
+.horizontalLine {
+    border: none; 
+    border-bottom: 1px solid rgba(148, 202, 255, 0.55);
+    padding-bottom: 20px;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+}
+
 /* Life card title block */
 .lifeCard-title {
   text-align: center;
