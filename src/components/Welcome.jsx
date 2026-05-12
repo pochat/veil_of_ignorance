@@ -42,7 +42,7 @@ function Welcome() {
 
 
             <Link className="animated-button-capsule" onClick={ handlePlayerName } to="/question">
-                Start
+                Enter this world
             </Link>
 
         </div>
