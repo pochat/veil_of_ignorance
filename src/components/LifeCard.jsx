@@ -37,9 +37,17 @@ function LifeCard() {
         
         // Initialize outcome to capture from questions.js
         let assignedLifeOutcome = ''
+
+        // Get the fate counts from the local storage
+        let currentFatePoor = Number(localStorage.getItem("currentFatePoor")) || 0;
+        let currentFateRich = Number(localStorage.getItem("currentFateRich")) || 0;
+
         
         // Compare current life to playersChoice
         if (currentPlayerChoice === 'poor') {
+
+            // Save fate stats to local storage
+            localStorage.setItem("fatePoor", currentFatePoor + 1 )
             
             // They are POOR (answers[0])
             if (assignedRandomLife === 'poor') {
@@ -47,11 +55,14 @@ function LifeCard() {
             } else {
                 assignedLifeOutcome = questions[index].answers[0].outcomes.rich;
             }
-
+            
         } else {
             
+            // Save fate stats to local storage
+            localStorage.setItem("fateRich", currentFateRich + 1 )
+
             // They are RICH (answers[1])
-            if (assignedRandomLife === 'poor') {
+            if (assignedRandomLife === 'rich') {
                 assignedLifeOutcome = questions[index].answers[1].outcomes.poor;
             } else {
                 assignedLifeOutcome = questions[index].answers[1].outcomes.rich;

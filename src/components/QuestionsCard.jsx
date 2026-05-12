@@ -1,4 +1,4 @@
-import { Routes, Route, Link, useNavigate } from "react-router-dom"
+import { Routes, Route, Link, useNavigate, parsePath } from "react-router-dom"
 import { useState } from "react";
 import questions from "../questions"
 import LifeCard from "./LifeCard";
@@ -25,13 +25,19 @@ function QuestionsCard() {
 
     function handleAnswer(answer) {
 
+        // Get the choices counts from the local storate
+        let currentPlayerChoicePoor = Number(localStorage.getItem("currentPlayerChoicePoor")) || 0;
+        let currentPlayerChoiceRich = Number(localStorage.getItem("currentPlayerChoiceRich")) || 0;
+
         // Detect user answers and save them to local storage
         if (answer.type === "poor") {
             localStorage.setItem("currentQuestion", questions[questionNumber].answers[0].text)
             localStorage.setItem("currentPlayerChoice", 'poor')
+            localStorage.setItem("currentPlayerChoicePoor", currentPlayerChoicePoor + 1)
         } else {            
             localStorage.setItem("currentQuestion", questions[questionNumber].answers[1].text)
             localStorage.setItem("currentPlayerChoice", 'rich')
+            localStorage.setItem("currentPlayerChoiceRich", currentPlayerChoiceRich + 1)
         }
 
         // Save question number to storage and pass to other components
