@@ -8,16 +8,16 @@ const questions = [
         text: "👥 Public hospitals. (Free but longer wait times)",
         type: "poor",
         outcomes: {
-          poor: "🩺 You received care even though your family had no money.",
-          rich: "⏳ You had to wait months for treatment despite being wealthy."
+          poor: "🟢 Lucky Outcome: 🩺 You received care even though your family had no money.",
+          rich: "🔴 Unlucky Outcome: ⏳ You had to wait months for treatment despite being wealthy."
         }
       },
       {
         text: "💰 Private hospitals. (Expensive but faster care)",
         type: "rich",
         outcomes: {
-          poor: "💸 Your family struggled to afford treatment.",
-          rich: "👨‍⚕️ You received immediate care from top doctors."
+          poor: "🔴 Unlucky Outcome: 💸 Your family struggled to afford treatment.",
+          rich: "🟢 Lucky Outcome: 👨‍⚕️ You received immediate care from top doctors."
         }
       }
     ]
@@ -32,16 +32,16 @@ const questions = [
         text: "👥 Public education. (Free but lower quality)",
         type: "poor",
         outcomes: {
-          poor: "🎒 You were able to go to school for free.",
-          rich: "📖 You never had access to the best teachers and resources."
+          poor: "🟢 Lucky Outcome: 🎒 You were able to go to school for free.",
+          rich: "🔴 Unlucky Outcome: 📖 You never had access to the best teachers and resources."
         }
       },
       {
         text: "💰 Private education. (Expensive but higher quality)",
         type: "rich",
         outcomes: {
-          poor: "💸 Your family could not afford tuition.",
-          rich: "🏆 You had access to elite teachers and opportunities."
+          poor: "🔴 Unlucky Outcome: 💸 Your family could not afford tuition.",
+          rich: "🟢 Lucky Outcome: 🏆 You had access to elite teachers and opportunities."
         }
       }
     ]
@@ -56,16 +56,16 @@ const questions = [
         text: "⚖️ Everyone earns the same salary.",
         type: "poor",
         outcomes: {
-          poor: "💵 You earned the same amount as everyone else.",
-          rich: "📉 Your extra skills did not increase your income."
+          poor: "🟢 Lucky Outcome: 💵 You earned the same amount as everyone else.",
+          rich: "🔴 Unlucky Outcome: 📉 Your extra skills did not increase your income."
         }
       },
       {
         text: "🚀 People with more skills earn more money.",
         type: "rich",
         outcomes: {
-          poor: "😟 You struggled to compete against higher skilled workers.",
-          rich: "💰 Your skills earned you a much higher salary."
+          poor: "🔴 Unlucky Outcome: 😟 You struggled to compete against higher skilled workers.",
+          rich: "🟢 Lucky Outcome: 💰 Your skills earned you a much higher salary."
         }
       }
     ]
@@ -80,16 +80,16 @@ const questions = [
         text: "🏢 The government provides housing for everyone.",
         type: "poor",
         outcomes: {
-          poor: "🔑 You were guaranteed a place to live.",
-          rich: "🏘️ You had the same type of housing as everyone else."
+          poor: "🟢 Lucky Outcome: 🔑 You were guaranteed a place to live.",
+          rich: "🔴 Unlucky Outcome: 🏘️ You had the same type of housing as everyone else."
         }
       },
       {
         text: "💰 People should buy their own homes.",
         type: "rich",
         outcomes: {
-          poor: "📈 Housing prices were too expensive for you.",
-          rich: "🏡 You bought a large home in a wealthy neighborhood."
+          poor: "🔴 Unlucky Outcome: 📈 Housing prices were too expensive for you.",
+          rich: "🟢 Lucky Outcome: 🏡 You bought a large home in a wealthy neighborhood."
         }
       }
     ]
@@ -104,16 +104,16 @@ const questions = [
         text: "📊 Rich people should pay higher taxes.",
         type: "poor",
         outcomes: {
-          poor: "🛟 Higher taxes on the rich helped pay for services you depended on.",
-          rich: "💸 A large amount of your wealth went to taxes."
+          poor: "🟢 Lucky Outcome: 🛟 Higher taxes on the rich helped pay for services you depended on.",
+          rich: "🔴 Unlucky Outcome: 💸 A large amount of your wealth went to taxes."
         }
       },
       {
         text: "⚖️ Poor and rich people should pay similar taxes.",
         type: "rich",
         outcomes: {
-          poor: "😓 Taxes took a large part of the little money you earned.",
-          rich: "💰 You kept more of the money you made."
+          poor: "🔴 Unlucky Outcome: 😓 Taxes took a large part of the little money you earned.",
+          rich: "🟢 Lucky Outcome: 💰 You kept more of the money you made."
         }
       }
     ]
@@ -128,16 +128,16 @@ const questions = [
         text: "🤝 Everyone should receive the same pension.",
         type: "poor",
         outcomes: {
-          poor: "🛡️ You received enough money to retire safely.",
-          rich: "⚖️ You received the same pension as everyone else."
+          poor: "🟢 Lucky Outcome: 🛡️ You received enough money to retire safely.",
+          rich: "🔴 Unlucky Outcome: ⚖️ You received the same pension as everyone else."
         }
       },
       {
         text: "📈 People should earn extra retirement money through their own efforts.",
         type: "rich",
         outcomes: {
-          poor: "😞 You struggled because you could not save enough money.",
-          rich: "🏖️ Your savings and investments gave you a comfortable retirement."
+          poor: "🔴 Unlucky Outcome: 😞 You struggled because you could not save enough money.",
+          rich: "🟢 Lucky Outcome: 🏖️ Your savings and investments gave you a comfortable retirement."
         }
       }
     ]
