@@ -1,7 +1,7 @@
 const questions = [
   {
     id: 1,
-    question: "🏥 You’re about to enter the world. Should hospitals be public or private?",
+    question: "🏥 You are about to enter the world. Should hospitals be public or private?",
     questionBeforeLifeChoice: "👶 Will you be born rich or poor?",
     answers: [
       {
@@ -25,7 +25,7 @@ const questions = [
 
   {
     id: 2,
-    question: "🏫 You’re now 10 years old. Should schools be public or private?",
+    question: "🏫 You are now 10 years old. Should schools be public or private?",
     questionBeforeLifeChoice: "📚 Will you go to a public or private school?",
     answers: [
       {
@@ -40,7 +40,7 @@ const questions = [
         text: "💰 Private education. (Expensive but higher quality)",
         type: "rich",
         outcomes: {
-          poor: "💸 Your family couldn’t afford tuition.",
+          poor: "💸 Your family could not afford tuition.",
           rich: "🏆 You had access to elite teachers and opportunities."
         }
       }
@@ -57,7 +57,7 @@ const questions = [
         type: "poor",
         outcomes: {
           poor: "💵 You earned the same amount as everyone else.",
-          rich: "📉 Your extra skills didn’t increase your income."
+          rich: "📉 Your extra skills did not increase your income."
         }
       },
       {
@@ -73,7 +73,7 @@ const questions = [
 
   {
     id: 4,
-    question: "🏠 You’re now an adult looking for a home. How should housing work?",
+    question: "🏠 You are now an adult looking for a home. How should housing work?",
     questionBeforeLifeChoice: "🏘️ Will you be able to afford a home?",
     answers: [
       {
@@ -136,7 +136,7 @@ const questions = [
         text: "📈 People should earn extra retirement money through their own efforts.",
         type: "rich",
         outcomes: {
-          poor: "😞 You struggled because you couldn't save enough money.",
+          poor: "😞 You struggled because you could not save enough money.",
           rich: "🏖️ Your savings and investments gave you a comfortable retirement."
         }
       }
