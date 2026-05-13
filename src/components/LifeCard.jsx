@@ -128,7 +128,6 @@ function LifeCard() {
                 <div className={`fade-in-result ${assignedLife ? "visible" : ""}`}>
                     <p className="lifeCard-subtitle">You chose: {chosenQuestion}</p>
                     <p className="lifeCard-subtitle">{ outcome }</p>
-                    <button className="animated-button-capsule">Cancel my life</button>
                     <button 
                     onClick={ nextQuestion }
                     className="animated-button-capsule"

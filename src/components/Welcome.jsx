@@ -24,7 +24,11 @@ function Welcome() {
         resetLocalStorage()
 
         // Set the player name
-        localStorage.setItem("playerName", playerName)
+        // Convert the first character to Uppercase
+        if (playerName) {
+            const formattedName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+            localStorage.setItem("playerName", formattedName);
+        }
     }
 
     return(
