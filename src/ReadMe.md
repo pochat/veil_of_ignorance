@@ -1,3 +1,8 @@
+# Project Title
+The Veil of Ignorance
+
+## Live URL
+https://pochat.github.io/veil_of_ignorance/
 
 # Teaching Team
 Professor: Lisa Osorio
