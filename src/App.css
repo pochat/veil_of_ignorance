@@ -11,7 +11,7 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 999px;
   padding: 14px 42px;
-  margin: 40px;
+  margin: 20px;
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(10px);
   color: white;
@@ -206,6 +206,19 @@ body {
   margin-top: 20px;
 }
 
+.name-input {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  color: white;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
 /* NavBar is fixed at the top */
 .navigation-container {
   position: fixed;
@@ -286,4 +299,12 @@ body {
 .poor {
   color: #a0a0a0; /* Grey/Silver */
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.vertical-stack {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 20px;
+  align-items: center; 
 }
